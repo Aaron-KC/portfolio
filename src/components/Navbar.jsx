@@ -26,7 +26,7 @@ const Navbar = () => {
               </li>
             ))
           }
-          <li className="text-sm">{dayjs().format("ddd MMM D h:mm A")}</li>
+          <time>{dayjs().format("ddd MMM D h:mm A")}</time>
         </ul>
       </div>
     </nav>

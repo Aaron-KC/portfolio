@@ -7,7 +7,7 @@ body {
   width: 100dvw;
   overflow: hidden;
   height: 100dvh;
-  background-image: url("/images/wallpaper.png");
+  background-image: url("/images/wallpaper4.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -43,7 +43,7 @@ body {
       @apply flex items-center max-sm:w-full max-sm:justify-center gap-5;
 
       &:last-child {
-        @apply max-sm:hidden;
+        @apply max-md:hidden;
       }
     }
 
