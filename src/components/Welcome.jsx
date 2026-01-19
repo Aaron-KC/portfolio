@@ -6,7 +6,7 @@ const FONT_WEIGHTS = {
   title: { min: 400, max: 900 },
   subtitle: { min: 100, max: 400 }
 }
-const renderText = (text, baseWeight = 400) => [...text].map((char, idx) => (<span key={idx} style={{ fontVariationSettings: `"wght" ${baseWeight}` }}>{char === " " ? "\u00A0" : char}</span>))
+const renderText = (text, baseWeight = 400) => [...text].map((char, idx) => (<span key={idx} aria-hidden="true" style={{ fontVariationSettings: `"wght" ${baseWeight}` }}>{char === " " ? "\u00A0" : char}</span>))
 
 const setUpMouseHover = (container, type) => {
   if (!container) return () => { };
@@ -61,10 +61,10 @@ const Welcome = () => {
 
   return (
     <div id="welcome">
-      <p className="font-georama text-3xl" ref={subtitleRef}>
+      <p className="font-georama text-3xl" ref={subtitleRef} aria-label="Hey, I'm Aaron KC! Welcome to my">
         {renderText("Hey, I'm Aaron KC! Welcome to my", 100)}
       </p>
-      <p className="font-georama text-8xl italic mt-1" ref={titleRef}>
+      <p className="font-georama text-8xl italic mt-1" ref={titleRef} aria-label="portfolio">
         {renderText("portfolio")}
       </p>
       <div className="small-screen">
