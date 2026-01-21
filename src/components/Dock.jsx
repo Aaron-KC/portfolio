@@ -16,7 +16,6 @@ const Dock = () => {
 
     window.isOpen ? closeWindow(id) : openWindow(id);
   }
-  console.log(windows)
 
   useGSAP(() => {
     const dock = dockRef.current;
