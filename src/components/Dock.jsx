@@ -3,9 +3,19 @@ import { dockApps } from "../constants"
 import { useRef } from "react"
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useWindowStore } from "../store/store";
 
 const Dock = () => {
   const dockRef = useRef(null);
+  const { openWindow, closeWindow, windows } = useWindowStore();
+
+  const toggleIcon = id => {
+    const window = windows[id];
+
+    if(!window) return
+
+    window.isOpen ? closeWindow(id) : openWindow(id);
+  }
 
   useGSAP(() => {
     const dock = dockRef.current;
@@ -46,7 +56,7 @@ const Dock = () => {
       <div className="dock-container" ref={dockRef}>
         {
           dockApps.map(({ id, name, icon, canOpen }) => (
-            <div key={id} className="relative flex justify-center items-center">
+            <div key={id} className="relative flex justify-center items-center" onClick={() => toggleIcon(id)}>
               <button type="button" data-tooltip-id="dock-tooltip" data-tooltip-content={name} data-tooltip-place="bottom" disabled={!canOpen} className="dock-icon">
                 <img src={`/images/${icon}`} alt={name} loading="lazy" className={`${!canOpen && "opacity-60"}`}/>
               </button>
