@@ -47,7 +47,7 @@ const Dock = () => {
         {
           dockApps.map(({ id, name, icon, canOpen }) => (
             <div key={id} className="relative flex justify-center items-center">
-              <button data-tooltip-id="dock-tooltip" data-tooltip-content={name} data-tooltip-place="bottom" disabled={!canOpen} className="dock-icon">
+              <button type="button" data-tooltip-id="dock-tooltip" data-tooltip-content={name} data-tooltip-place="bottom" disabled={!canOpen} className="dock-icon">
                 <img src={`/images/${icon}`} alt={name} loading="lazy" className={`${!canOpen && "opacity-60"}`}/>
               </button>
             </div>
