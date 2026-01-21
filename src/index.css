@@ -173,11 +173,11 @@ body {
       @apply text-sm font-roboto p-5;
 
       .label {
-        @apply flex items-center ms-10 mt-7;
+        @apply flex items-center ms-10 mt-3;
       }
 
       .content {
-        @apply py-5 my-5 border-y border-dashed space-y-1;
+        @apply py-3 my-3 border-y border-dashed space-y-1;
 
         li {
           .check {
