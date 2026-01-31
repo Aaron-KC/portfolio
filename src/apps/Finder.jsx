@@ -29,7 +29,7 @@ const Finder = () => {
             <ul>
               {
                 Object.values(locations).map(item => (
-                  <li key={item.id} className={currentLocation.id == item.id ? "active" : "notactive"} onClick={() => changeLocation(item)} role="button"
+                  <li key={item.id} className={currentLocation.id == item.id ? "active" : "not-active"} onClick={() => changeLocation(item)} role="button"
                     tabIndex={0}>
                     <img src={item.icon} alt={item.name} className="size-4" />
                     <span className="text-sm text-gray-500">{item.name}</span>
