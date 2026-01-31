@@ -7,7 +7,12 @@ const WindowControls = ({ target }) => {
     <div className="flex items-center gap-0.5">
       {/* Close Button: Functional with Hover */}
       <button
-        onClick={() => closeWindow(target)}
+      type="button"
+        onClick={() => {
+          if(target) {
+            closeWindow(target);
+          }
+        }}
         className="relative flex items-center justify-center h-5 w-5 rounded-md group active:scale-90"
         aria-label="Close Window"
       >

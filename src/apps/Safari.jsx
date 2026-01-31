@@ -94,7 +94,7 @@ const SafariComponent = () => {
     >
       {/* Header */}
 
-      <div className="relative flex items-center h-13 bg-gray-200 backdrop-blur-md border-b border-gray-300 px-4 select-none rounded-t-lg">
+      <div className="relative flex items-center h-13 bg-gray-200/90 backdrop-blur-md border-b border-gray-300 px-4 select-none rounded-t-lg">
         {/* macOS window controls (Traffic Lights) */}
         <WindowControls target="safari" />
 
