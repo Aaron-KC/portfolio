@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from "@gsap/react";
@@ -6,8 +6,8 @@ import WindowControls from "../components/WindowControls";
 import WindowWrapper from "../components/WindowWrapper";
 import { techStack } from '../constants';
 import { useWindowStore } from '../store/store';
-import ComputersCanvas from '../canvas/Computers';
 
+const ComputersCanvas = lazy(() => import('../canvas/Computers'));
 gsap.registerPlugin(ScrollTrigger);
 
 const SafariComponent = () => {
@@ -94,7 +94,7 @@ const SafariComponent = () => {
     >
       {/* Header */}
 
-      <div className="relative flex items-center h-13 bg-[#f1f1f1]/90 backdrop-blur-md border-b border-gray-300 px-4 select-none rounded-t-lg">
+      <div className="relative flex items-center h-13 bg-gray-200/90 backdrop-blur-md border-b border-gray-300 px-4 select-none rounded-t-lg">
         {/* macOS window controls (Traffic Lights) */}
         <WindowControls target="safari" />
 
@@ -201,7 +201,9 @@ const SafariComponent = () => {
                 e.nativeEvent.stopImmediatePropagation();
                 focusWindow("safari");
               }} onTouchStart={(e) => e.stopPropagation()}>
-                <ComputersCanvas />
+                <Suspense fallback={<div className="w-full h-full bg-transparent" />}>
+                  <ComputersCanvas />
+                </Suspense>
               </div>
             </div>
           </section>

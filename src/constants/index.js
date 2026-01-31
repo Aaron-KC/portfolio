@@ -276,7 +276,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "xl:top-52 xl:right-80 top-60 left-5",
-      windowPosition: "top-[17vh] right-5",
+      windowPosition: "top-[20vh] right-5",
       children: [
         {
           id: 1,
@@ -339,7 +339,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "xl:top-10 xl:left-80 top-35 left-20",
-      windowPosition: "top-[29vh] right-5",
+      windowPosition: "top-[35vh] right-5",
       children: [
         {
           id: 1,
@@ -400,7 +400,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-50 left-50",
-      windowPosition: "top-[53vh] right-5",
+      windowPosition: "top-[50vh] right-5",
       children: [
         {
           id: 1,
@@ -487,7 +487,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-40",
-      windowPosition: "top-[41vh] right-5",
+      windowPosition: "top-[65vh] right-5",
       children: [
         {
           id: 1,
@@ -618,24 +618,6 @@ const ABOUT_LOCATION = {
   icon: "/icons/info.svg",
   kind: "folder",
   children: [
-    {
-      id: 1,
-      name: "me.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-10 left-5",
-      imageUrl: "/images/gal1.png",
-    },
-    {
-      id: 2,
-      name: "also-me.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "xl:top-28 xl:right-72 top-35 left-20",
-      imageUrl: "/images/gal2.jpg",
-    },
     {
       id: 3,
       name: "about-me.txt",
