@@ -90,7 +90,7 @@ const SafariComponent = () => {
   return (
     <div
       ref={containerRef}
-      className="flex flex-col h-137.5 bg-[#0a0a0a] text-[#ededed] font-sans rounded-xl overflow-hidden"
+      className="flex flex-col h-137 bg-[#0a0a0a] text-[#ededed] font-sans rounded-xl overflow-hidden"
     >
       {/* Header */}
 

@@ -11,7 +11,7 @@ const Home = () => {
   const { changeLocation } = useFinderStore()
   useGSAP(() => {
     const instances = Draggable.create(".folder")
-     return () => instances.forEach((instance) => instance.kill())
+     return () => instances.forEach((instance) => { instance.kill() })
   }, [])
 
   const handleFolderClick = item => {

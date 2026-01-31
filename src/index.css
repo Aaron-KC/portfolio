@@ -69,13 +69,6 @@ body {
 }
 
 /* Add this to your main.css or index.css */
-@media (max-width: 639px) {
-  #safari, #photos, #finder, #contact, #resume, #txtfile, #imgfile, #terminal {
-    display: none !important;
-    pointer-events: none !important;
-  }
-}
-
 @layer base {
   main {
     @apply w-dvw h-dvh overflow-hidden;

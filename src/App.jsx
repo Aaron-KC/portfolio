@@ -9,6 +9,7 @@ import Welcome from "./components/Welcome";
 import WindowLoader from "./components/WindowLoader";
 import { useWindowStore } from "./store/store";
 import { SystemCrash } from "./components/WindowErrorFallback";
+import { useMediaQuery } from "./hooks/useMediaQuery";
 
 const FinderWindow = lazy(() => import("./apps/Finder"));
 const ResumeWrapped = lazy(() => import("./apps/Resume"));
@@ -24,6 +25,7 @@ gsap.registerPlugin(Draggable);
 
 const App = () => {
   const { windows } = useWindowStore();
+  const isDesktop = useMediaQuery('(min-width: 640px)');
   return (
     <ErrorBoundary
       FallbackComponent={SystemCrash}
@@ -35,37 +37,43 @@ const App = () => {
         <Navbar />
         <Welcome />
         <Dock />
-        {windows.terminal.hasMounted && (
-          <Suspense fallback={<WindowLoader />}><Terminal /></Suspense>
-        )}
+        {
+          isDesktop && (
+            <>
+              {windows.terminal.hasMounted && (
+                <Suspense fallback={<WindowLoader />}><Terminal /></Suspense>
+              )}
 
-        {windows.resume.hasMounted && (
-          <Suspense fallback={<WindowLoader />}><ResumeWrapped /></Suspense>
-        )}
+              {windows.resume.hasMounted && (
+                <Suspense fallback={<WindowLoader />}><ResumeWrapped /></Suspense>
+              )}
 
-        {windows.finder.hasMounted && (
-          <Suspense fallback={<WindowLoader />}><FinderWindow /></Suspense>
-        )}
+              {windows.finder.hasMounted && (
+                <Suspense fallback={<WindowLoader />}><FinderWindow /></Suspense>
+              )}
 
-        {windows.txtfile.hasMounted && (
-          <Suspense fallback={<WindowLoader />}><Text /></Suspense>
-        )}
+              {windows.txtfile.hasMounted && (
+                <Suspense fallback={<WindowLoader />}><Text /></Suspense>
+              )}
 
-        {windows.imgfile.hasMounted && (
-          <Suspense fallback={<WindowLoader />}><Image /></Suspense>
-        )}
+              {windows.imgfile.hasMounted && (
+                <Suspense fallback={<WindowLoader />}><Image /></Suspense>
+              )}
 
-        {windows.contact.hasMounted && (
-          <Suspense fallback={<WindowLoader />}><Contact /></Suspense>
-        )}
+              {windows.contact.hasMounted && (
+                <Suspense fallback={<WindowLoader />}><Contact /></Suspense>
+              )}
 
-        {windows.safari.hasMounted && (
-          <Suspense fallback={<WindowLoader />}><Safari /></Suspense>
-        )}
+              {windows.safari.hasMounted && (
+                <Suspense fallback={<WindowLoader />}><Safari /></Suspense>
+              )}
 
-        {windows.photos.hasMounted && (
-          <Suspense fallback={<WindowLoader />}><Photos /></Suspense>
-        )}
+              {windows.photos.hasMounted && (
+                <Suspense fallback={<WindowLoader />}><Photos /></Suspense>
+              )}
+            </>
+          )
+        }
         <Home />
       </main>
     </ErrorBoundary>

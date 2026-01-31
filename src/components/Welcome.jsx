@@ -68,7 +68,7 @@ const Welcome = () => {
         {renderText("portfolio")}
       </p>
       <div className="small-screen">
-        <p>This portfolio's appeal is only visible in desktops and tablets</p>
+        <p>This portfolio's appeal is only visible in desktops and tablets with large screens.</p>
       </div>
     </div>
   )

@@ -29,7 +29,8 @@ const Finder = () => {
             <ul>
               {
                 Object.values(locations).map(item => (
-                  <li key={item.id} className={currentLocation.id == item.id ? "active" : "notactive"} onClick={() => changeLocation(item)}>
+                  <li key={item.id} className={currentLocation.id == item.id ? "active" : "notactive"} onClick={() => changeLocation(item)} role="button"
+                    tabIndex={0}>
                     <img src={item.icon} alt={item.name} className="size-4" />
                     <span className="text-sm text-gray-500">{item.name}</span>
                   </li>
@@ -42,7 +43,7 @@ const Finder = () => {
             <ul>
               {
                 locations.work.children.map(item => (
-                  <li key={item.id} className={currentLocation.id == item.id ? "active" : "notactive"} onClick={() => changeLocation(item)} >
+                  <li key={item.id} className={currentLocation.id == item.id ? "active" : "notactive"} onClick={() => changeLocation(item)} role="button" tabIndex={0}>
                     <img src={item.icon} alt={item.name} className="size-4" />
                     <span className="text-sm text-gray-500 truncate">{item.name}</span>
                   </li>
@@ -51,16 +52,17 @@ const Finder = () => {
             </ul>
           </div>
         </div>
-        <div className="content">
+        <ul className="content">
           {
             currentLocation.children.map(item => (
-              <li key={item.id} className={`${item.position} cursor-pointer`} onClick={() => openItem(item)}>
+              <li key={item.id} className={`${item.position} cursor-pointer`} onClick={() => openItem(item)} role="button"
+                tabIndex={0}>
                 <img src={item.icon} alt={item.name} />
                 <p>{item.name}</p>
               </li>
             ))
           }
-        </div>
+        </ul>
       </div>
     </>
   )
