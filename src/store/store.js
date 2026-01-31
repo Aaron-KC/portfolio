@@ -14,6 +14,7 @@ export const useWindowStore = create((set) => ({
           ...state.windows[id],
           isOpen: true,
           zIndex: state.nextZIndex,
+          hasMounted: true,
           data: data ?? state.windows[id].data,
         },
       },
