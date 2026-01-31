@@ -61,10 +61,10 @@ const Welcome = () => {
 
   return (
     <div id="welcome">
-      <p className="font-georama text-3xl" ref={subtitleRef} aria-label="Hey, I'm Aaron KC! Welcome to my">
+      <p className="font-georama text-3xl hidden xs:block" ref={subtitleRef} aria-label="Hey, I'm Aaron KC! Welcome to my">
         {renderText("Hey, I'm Aaron KC! Welcome to my", 100)}
       </p>
-      <p className="font-georama text-8xl italic mt-1" ref={titleRef} aria-label="portfolio">
+      <p className="font-georama text-8xl italic mt-1 hidden xs:block" ref={titleRef} aria-label="portfolio">
         {renderText("portfolio")}
       </p>
       <div className="small-screen">
