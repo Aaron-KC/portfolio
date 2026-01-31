@@ -619,24 +619,6 @@ const ABOUT_LOCATION = {
   kind: "folder",
   children: [
     {
-      id: 1,
-      name: "me.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-10 left-5",
-      imageUrl: "/images/gal1.png",
-    },
-    {
-      id: 2,
-      name: "also-me.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "xl:top-28 xl:right-72 top-35 left-20",
-      imageUrl: "/images/gal2.jpg",
-    },
-    {
       id: 3,
       name: "about-me.txt",
       icon: "/images/txt.png",

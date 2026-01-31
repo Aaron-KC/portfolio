@@ -12,4 +12,29 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          // If the file path contains 'three', put it in the 3D vendor chunk
+          if (
+            id.includes("node_modules/three") ||
+            id.includes("node_modules/@react-three")
+          ) {
+            return "three-vendor";
+          }
+          // Put GSAP in its own chunk
+          if (id.includes("node_modules/gsap")) {
+            return "gsap-vendor";
+          }
+          // Put other libraries in a general vendor chunk
+          if (id.includes("node_modules")) {
+            return "vendor";
+          }
+        },
+      },
+    },
+    // This stops Vite from complaining about the huge 3D vendor file
+    chunkSizeWarningLimit: 1200,
+  },
 });
