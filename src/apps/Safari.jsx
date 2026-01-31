@@ -6,7 +6,6 @@ import WindowControls from "../components/WindowControls";
 import WindowWrapper from "../components/WindowWrapper";
 import { techStack } from '../constants';
 import { useWindowStore } from '../store/store';
-import CanvasLoader from '../canvas/CanvasLoader';
 
 const ComputersCanvas = lazy(() => import('../canvas/Computers'));
 gsap.registerPlugin(ScrollTrigger);
