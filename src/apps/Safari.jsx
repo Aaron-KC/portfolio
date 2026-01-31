@@ -29,6 +29,14 @@ const SafariComponent = () => {
     }, 1200); // Fades out after 1.2s of inactivity
   };
 
+  useEffect(() => {
+    return () => {
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+    };
+  }, []);
+
   useGSAP(() => {
     if (!scrollRef.current) return;
 

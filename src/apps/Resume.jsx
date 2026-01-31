@@ -20,7 +20,7 @@ const Resume = () => {
         </a>
       </div>
       <div className="max-h-137.5 overflow-y-scroll bg-gray-100">
-        <Document file="files/resume.pdf" loading={<div className="h-60 w-60 p-3 flex">Loading Resume...</div>}>
+        <Document file="files/resume.pdf" loading={<div className="h-60 w-60 p-3 flex">Loading Resume...</div>} error={<div className="h-60 w-60 p-3 flex text-red-500">Failed to load resume. Please try again later.</div>}>
           <div className="flex flex-col items-center gap-6">
             <div className="bg-white shadow-md rounded-lg">
               <Page pageNumber={1} />
@@ -30,7 +30,7 @@ const Resume = () => {
             </div>
           </div>
         </Document>
-      </div>
+      </div >
 
     </>
   )

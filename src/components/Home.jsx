@@ -10,7 +10,8 @@ const Home = () => {
   const { openWindow } = useWindowStore()
   const { changeLocation } = useFinderStore()
   useGSAP(() => {
-    Draggable.create(".folder")
+    const instances = Draggable.create(".folder")
+     return () => instances.forEach((instance) => instance.kill())
   }, [])
 
   const handleFolderClick = item => {

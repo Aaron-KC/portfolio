@@ -13,7 +13,7 @@ const Finder = () => {
     if (item.kind === "folder") return changeLocation(item)
     if (item.kind === "file" && item.fileType == "txt") return openWindow("txtfile", item)
     if (item.kind === "file" && item.fileType == "img") return openWindow("imgfile", item)
-    if (item.kind === "file" && item.fileType == "url") return window.open(item.href, "_blank")
+    if (item.kind === "file" && item.fileType == "url") return window.open(item.href, "_blank", "noopener,noreferrer")
   }
 
   return (

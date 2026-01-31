@@ -1,5 +1,5 @@
 export const SystemCrash = ({ error }) => (
-  <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black text-white font-sans p-10">
+  <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black text-white font-sans p-10">
     <div className="max-w-md w-full border border-white/20 p-8 rounded-lg bg-[#111]">
       <div className="flex items-center gap-3 mb-6">
         <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />

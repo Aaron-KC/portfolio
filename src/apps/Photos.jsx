@@ -57,7 +57,7 @@ const PhotosComponent = () => {
                   <img
                     src={photo.img}
                     alt={`Photo ${photo.id}`}
-                    className="w-full max-h-87.5  object-cover object-top rounded-lg"
+                    className="w-full max-h-87  object-cover object-top rounded-lg"
                   />
                 </li>
               ))}
