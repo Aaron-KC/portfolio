@@ -10,6 +10,8 @@ import WindowLoader from "./components/WindowLoader";
 import { useWindowStore } from "./store/store";
 import { SystemCrash } from "./components/WindowErrorFallback";
 import { useMediaQuery } from "./hooks/useMediaQuery";
+import { useIsMobileLandscape } from "./hooks/useIsMobileLandscape";
+import RotationWarning from "./components/RotationWarning";
 
 const FinderWindow = lazy(() => import("./apps/Finder"));
 const ResumeWrapped = lazy(() => import("./apps/Resume"));
@@ -25,7 +27,14 @@ gsap.registerPlugin(Draggable);
 
 const App = () => {
   const { windows } = useWindowStore();
+  const isMobileLandscape = useIsMobileLandscape();
   const isDesktop = useMediaQuery('(min-width: 640px)');
+
+  const showWarning = isMobileLandscape;
+
+  if(showWarning) {
+    return <RotationWarning />
+  }
   return (
     <ErrorBoundary
       FallbackComponent={SystemCrash}
