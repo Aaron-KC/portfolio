@@ -1,6 +1,7 @@
 import { navIcons, navLinks } from "../constants"
 import dayjs from "dayjs"
 import { useWindowStore } from "../store/store";
+import CloseAllButton from "./CloseAllButton";
 
 const Navbar = () => {
   const { openWindow } = useWindowStore();
@@ -19,6 +20,7 @@ const Navbar = () => {
           }
         </ul>
       </div>
+      <CloseAllButton />
       <div>
         <ul>
           {

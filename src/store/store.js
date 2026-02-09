@@ -44,4 +44,19 @@ export const useWindowStore = create((set) => ({
         },
       },
     })),
+
+  closeAllWindows: () =>
+    set((state) => {
+      const closedWindows = {};
+      Object.keys(state.windows).forEach((key) => {
+        closedWindows[key] = {
+          ...state.windows[key],
+          isOpen: false,
+          zIndex: INITIAL_Z_INDEX,
+          data: null,
+          hasMounted: false
+        };
+      });
+      return { windows: closedWindows };
+    }),
 }));
