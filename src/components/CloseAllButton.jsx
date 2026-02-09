@@ -6,7 +6,6 @@ const CloseAllButton = () => {
   // Only show the button if at least one window is open
   const anyWindowOpen = Object.values(windows).some(win => win.isOpen);
 
-  console.log(anyWindowOpen)
 
   if (!anyWindowOpen) return null;
 
